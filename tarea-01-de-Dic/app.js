@@ -15,12 +15,12 @@ Eliminar un producto del carrito (recibe el nombre del producto a eliminar)✅*/
 
 let productos = ["azucar", "pan", "carne"];
 
-//Funcion para agregar productos
+//Funcion para agregar productos.
 const agregarProductos = function () {
   let producto = prompt("Ingrese el producto que quieres agregar a la lista");
 
   while (producto) {
-    if (buscarProducto(producto)) {
+    if (verificacion(producto)) {
       alert("El producto que ingresaste ya esta en la lista");
     } else {
       productos.push(producto);
@@ -30,7 +30,7 @@ const agregarProductos = function () {
   ordenarProductos(productos);
 };
 
-// Funcion para orendar la lista
+// Funcion para orendar la lista.
 const ordenarProductos = function (arreglo) {
   if (arreglo.length > 0) {
     console.log("==== Lista de productos 🛒 ====");
@@ -42,9 +42,9 @@ const ordenarProductos = function (arreglo) {
   }
 };
 
-//Funcion de busqueda o filtro de productos
-const filtrarProducto = function (
-  termino = prompt("Ingrese el término a buscar")
+//Funcion de busqueda o filtro de productos.
+const buscarProducto = function (
+  termino = prompt("Ingrese el producto a buscar")
 ) {
   let productoBuscado = productos.filter(function (producto) {
     return producto.includes(termino);
@@ -53,12 +53,12 @@ const filtrarProducto = function (
   if (productoBuscado.length > 0) {
     ordenarProductos(productoBuscado);
   } else {
-    console.warn("No se a encontrado el producto buscado en la lista");
+    console.warn("No se a encontrado el producto en la lista");
   }
 };
 
-//Funcion verificamos que el producto no esta en la lista
-const buscarProducto = function (producto) {
+//Funcion verificamos que el producto no esta en la lista.
+const verificacion = function (producto) {
   let comparacion = productos.find(function (a) {
     return a === producto;
   });
@@ -69,7 +69,7 @@ const buscarProducto = function (producto) {
   }
 };
 
-//Funcion para eliminar un producto
+//Funcion para eliminar un producto.
 const eliminarProducto = function () {
   let productoAEliminar = prompt(
     "Ingrese el producto que quiere eliminar de la lista"
@@ -86,4 +86,14 @@ const eliminarProducto = function () {
   } else {
     alert("El producto que quiere eliminar no esta en la lista");
   }
+};
+
+//Funcion para modificar un producto de la lista.
+const remplazarProducto = function () {
+  let productoAModificar = prompt(
+    "¿Cual es el producto que quiere remplazar de la lista?"
+  );
+  let replazo = prompt(
+    `Que producto quiere poner en el lugar de ${productoAModificar}`
+  );
 };
