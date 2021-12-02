@@ -57,7 +57,7 @@ const buscarProducto = function (
   }
 };
 
-//Funcion verificamos que el producto no esta en la lista.
+//Funcion verificamos que el producto no este en la lista.
 const verificacion = function (producto) {
   let comparacion = productos.find(function (a) {
     return a === producto;
@@ -93,7 +93,18 @@ const remplazarProducto = function () {
   let productoAModificar = prompt(
     "¿Cual es el producto que quiere remplazar de la lista?"
   );
-  let replazo = prompt(
-    `Que producto quiere poner en el lugar de ${productoAModificar}`
-  );
+  if (verificacion(productoAModificar)) {
+    let replazo = prompt(
+      `Que producto quiere poner en el lugar de ${productoAModificar}`
+    );
+    let indice2 = productos.indexOf(productoAModificar);
+    let confirmacion = confirm(
+      `Estas seguro que quieres elimnar ${productos[indice2]} por ${replazo}`
+    );
+    if (confirmacion) {
+      productos.splice(indice2, 1, replazo);
+    }
+  } else {
+    alert("El producto que quieres modificar no esta en la lista");
+  }
 };
