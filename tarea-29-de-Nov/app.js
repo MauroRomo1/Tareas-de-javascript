@@ -34,7 +34,7 @@ Para mostrar texto en el navegador debemos usar document.write()*/
 
 let datosUsuarios = [];
 const pedirDatos = function (nombre, apellido, domicilio, correo) {
-  nombre = prompt("hombreIngrese su nombre");
+  nombre = prompt("Ingrese su nombre");
   apellido = prompt("Ingrese su apellido");
   domicilio = prompt("Ingrese su domicilio");
   correo = prompt("Ingrese su correo electronico");
