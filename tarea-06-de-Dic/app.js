@@ -59,3 +59,46 @@ const ListarDatos = function () {
     console.log(`${key}: ${persona[key]}`);
   }
 };
+//====================================================================//
+
+//ARREGLO DE OBJETOS
+
+/*Crear un arreglo de objetos que contenga datos de películas como:
+Título
+Género
+Año
+sinopsis
+Crea una función que permita mostrar en una lista cada película con sus datos.*/
+
+let peliculas = [
+  {
+    titulo: "Shrek",
+    genero: "Comedia/Fantasía",
+    year: 2001,
+    sinopsis:
+      "Hace mucho tiempo, en una lejana ciénaga, vivía un ogro llamado Shrek. Un día, su preciada soledad se ve interrumpida por un montón de personajes de cuento de hadas que invaden su casa. Todos fueron desterrados de su reino por el malvado Lord Farquaad.",
+  },
+  {
+    titulo: "El planeta del tesoro",
+    genero: "Aventura/Infantil",
+    year: 2002,
+    sinopsis:
+      "Jim Hawkins, un chico rebelde a quien siempre le han apasionado las historias de piratas, compite para encontrar un tesoro en el espacio exterior.",
+  },
+  {
+    titulo: "Nueve reinas",
+    genero: "Crimen/Drama",
+    year: 2000,
+    sinopsis:
+      "Sinopsis: Juan (Gastón Pauls) y Marcos (Ricardo Darín) son dos estafadores de poca monta que se conocen por casualidad una madrugada y se ven metidos en un negocio turbio que los puede hacer millonarios. En realidad, ambos se jugarán su destino, su ser o no ser, en poco menos de 24 horas.",
+  },
+];
+function listarPeliculas() {
+  console.log("==== Lista de peliculas 🎬 ====");
+  for (i = 0; i < peliculas.length; i++) {
+    console.log("___________________");
+    for (const key in peliculas[i]) {
+      console.log(`${key}: ${peliculas[i][key]}`);
+    }
+  }
+}
